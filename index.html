@@ -1,103 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>I Love You Ryanko jan 💖</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-    }
+<meta charset="UTF-8">
+<title>Love Page for Ryan 💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+    overflow-x: hidden;
+    text-align: center;
+    color: white;
+  }
 
-    h1 {
-      position: absolute;
-      top: 40%;
-      font-size: 3rem;
-      color: white;
-      text-shadow: 0 0 20px #ff69b4;
-      animation: pulse 2s infinite;
-    }
+  /* Landing picture */
+  #landing-img {
+    width: 300px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 20px #fff;
+  }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
+  /* Room input */
+  #room-container {
+    margin-top: 20px;
+  }
 
-    .heart {
-      position: absolute;
-      color: red;
-      font-size: 24px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.8;
-    }
+  #room-input {
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
-    }
+  #room-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
 
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 3s infinite ease-in-out;
-    }
+  /* Secret message */
+  #secret-message {
+    display: none;
+    font-size: 24px;
+    margin-top: 30px;
+    text-shadow: 0 0 10px #fff;
+  }
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.5); }
-    }
-  </style>
+  /* Falling PNGs container */
+  #snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Advent calendar */
+  #advent-container {
+    display: none;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  .advent-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 10px #fff;
+  }
+
+  .advent-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .advent-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+    color: #ff1493;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 14px;
+    display: none;
+  }
+</style>
 </head>
 <body>
-  <h1>I Love You Ryan 💕</h1>
 
-  <script>
-    // Create floating hearts
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = Math.random() * 30 + 20 + "px";
-      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-      document.body.appendChild(heart);
+<!-- Landing picture -->
+<img id="landing-img" src="https://via.placeholder.com/300x300.png?text=Your+Picture" alt="Our Picture">
 
-      setTimeout(() => heart.remove(), 6000);
+<!-- Room input -->
+<div id="room-container">
+  <input type="text" id="room-input" placeholder="ENTER ROOM NUMBER">
+  <button id="room-btn">Enter</button>
+</div>
+
+<!-- Secret message -->
+<div id="secret-message">
+  I love you very much, you're an amazing person! 💕
+</div>
+
+<!-- Falling PNGs -->
+<div id="snow-container"></div>
+
+<!-- Advent calendar -->
+<div id="advent-container">
+  <div class="advent-item">
+    <img src="https://via.placeholder.com/100x100.png?text=1" alt="1">
+    <div class="advent-text">Reason 1: You always make me smile 😘</div>
+  </div>
+  <div class="advent-item">
+    <img src="https://via.placeholder.com/100x100.png?text=2" alt="2">
+    <div class="advent-text">Reason 2: You are so kind 💖</div>
+  </div>
+  <div class="advent-item">
+    <img src="https://via.placeholder.com/100x100.png?text=3" alt="3">
+    <div class="advent-text">Reason 3: You inspire me every day ✨</div>
+  </div>
+  <!-- Add more items as needed -->
+</div>
+
+<script>
+  // Room number check
+  const roomBtn = document.getElementById('room-btn');
+  const roomInput = document.getElementById('room-input');
+  const secretMessage = document.getElementById('secret-message');
+  const adventContainer = document.getElementById('advent-container');
+  const snowContainer = document.getElementById('snow-container');
+
+  roomBtn.addEventListener('click', () => {
+    if(roomInput.value === '2741') {
+      document.getElementById('room-container').style.display = 'none';
+      secretMessage.style.display = 'block';
+      adventContainer.style.display = 'grid';
+      startSnow();
+    } else {
+      alert('Incorrect room number 💔');
     }
+  });
 
-    setInterval(createHeart, 300);
+  // Falling PNGs
+  const snowImages = [
+    'https://via.placeholder.com/40x40.png?text=❤', // Replace with your PNG URLs
+    'https://via.placeholder.com/40x40.png?text=💕',
+    'https://via.placeholder.com/40x40.png?text=💖'
+  ];
 
-    // Create sparkles
-    function createSparkle() {
-      const sparkle = document.createElement("div");
-      sparkle.classList.add("sparkle");
-      sparkle.style.left = Math.random() * 100 + "vw";
-      sparkle.style.top = Math.random() * 100 + "vh";
-      sparkle.style.animationDuration = (Math.random() * 2 + 2) + "s";
-      document.body.appendChild(sparkle);
+  function startSnow() {
+    setInterval(() => {
+      const img = document.createElement('img');
+      img.src = snowImages[Math.floor(Math.random() * snowImages.length)];
+      img.style.position = 'absolute';
+      img.style.width = `${Math.random() * 30 + 20}px`;
+      img.style.left = `${Math.random() * window.innerWidth}px`;
+      img.style.top = '-50px';
+      img.style.zIndex = '1';
+      snowContainer.appendChild(img);
 
-      setTimeout(() => sparkle.remove(), 3000);
-    }
+      let fall = setInterval(() => {
+        img.style.top = parseFloat(img.style.top) + 2 + 'px';
+        if(parseFloat(img.style.top) > window.innerHeight) {
+          snowContainer.removeChild(img);
+          clearInterval(fall);
+        }
+      }, 20);
+    }, 300);
+  }
 
-    setInterval(createSparkle, 500);
-  </script>
+  // Advent calendar click
+  const adventItems = document.querySelectorAll('.advent-item');
+  adventItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const text = item.querySelector('.advent-text');
+      text.style.display = text.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
 </body>
 </html>
+
