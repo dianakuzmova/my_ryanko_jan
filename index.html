@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Ryanko 💙</title>
+<title>Birthday Surprise for Ryanko Jan</title>
 <style>
   body {
     margin: 0;
@@ -14,22 +14,24 @@
     color: white;
   }
 
-  /* Landing image */
+  /* Landing */
+  #landing {
+    margin-top: 40px;
+  }
+
   #landing-img {
     width: 300px;
     border-radius: 20px;
-    margin-top: 40px;
     box-shadow: 0 0 20px #fff;
   }
 
-  /* Room input */
   #room-container {
     margin-top: 20px;
   }
 
   #room-input {
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -37,7 +39,7 @@
 
   #room-btn {
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
     background-color: #ff69b4;
@@ -46,18 +48,7 @@
     margin-left: 10px;
   }
 
-  /* Secret section */
-  #secret-section {
-    display: none;
-    margin-top: 20px;
-  }
-
-  #secret-title {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  /* Snow container */
+  /* Falling PNGs */
   #snow-container {
     position: fixed;
     top: 0;
@@ -68,15 +59,26 @@
     z-index: 1;
   }
 
-  /* Advent calendar */
+  /* Reasons page */
+  #reasons-page {
+    display: none;
+    margin-top: 30px;
+    z-index: 2;
+    position: relative;
+  }
+
+  #reasons-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
   #advent-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    max-width: 700px;
+    justify-items: center;
+    max-width: 800px;
     margin: 0 auto;
-    z-index: 2;
-    position: relative;
   }
 
   .advent-item {
@@ -87,9 +89,7 @@
     cursor: pointer;
     position: relative;
     box-shadow: 0 0 10px #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
   }
 
   .advent-item img {
@@ -101,118 +101,112 @@
   .advent-text {
     position: absolute;
     inset: 0;
-    background: rgba(255,255,255,0.95);
-    color: #001f3f;
+    background: rgba(255,255,255,0.9);
+    color: #ff1493;
     font-weight: bold;
-    font-size: 14px;
-    display: flex;
+    padding: 10px;
+    font-size: 16px;
+    display: none;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     text-align: center;
-    display: none;
   }
 
-  /* Finale */
-  #finale {
+  /* Final message */
+  #final-message {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    color: white;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    text-align: center;
-    flex-direction: column;
+    color: #ff69b4;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 20px #fff;
+    z-index: 1000;
   }
 </style>
 </head>
 <body>
 
-<!-- Landing picture + code input -->
-<div id="landing-section">
+<!-- Landing page -->
+<div id="landing">
   <img id="landing-img" src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/smile.jpeg" alt="Our Picture">
   <div id="room-container">
-    <p>Enter 4 number code</p>
+    <p>Enter 4 number code:</p>
     <input type="text" id="room-input" placeholder="Enter code">
     <button id="room-btn">Enter</button>
   </div>
 </div>
 
-<!-- Snow container -->
+<!-- Falling PNGs -->
 <div id="snow-container"></div>
 
-<!-- Secret section -->
-<div id="secret-section">
-  <div id="secret-title">Reasons I love you (click on pictures baby)</div>
+<!-- Reasons page -->
+<div id="reasons-page">
+  <div id="reasons-title">Reasons I love you (click on pictures baby) 💕</div>
   <div id="advent-container">
-    <div class="advent-item" data-text="i LOVE how autistic you are - my little Sheldon :D">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG" alt="1">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG">
+      <div class="advent-text">i LOVE how autistic you are - my little Sheldon :D</div>
     </div>
-    <div class="advent-item" data-text="i love how you handle problems and obsticles and how strong you are in your body and mind">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/mirror.jpeg" alt="2">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/mirror.jpeg">
+      <div class="advent-text">i love how you handle problems and obstacles and how strong you are in your body and mind</div>
     </div>
-    <div class="advent-item" data-text="i love how you're so ambitious and strategic and GENIUS WHAT??">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/busy.JPG" alt="3">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/busy.JPG">
+      <div class="advent-text">i love how you're so ambitious and strategic and GENIUS WHAT??</div>
     </div>
-    <div class="advent-item" data-text="i love how we make each others innerchild feel safe and loved">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us3.jpg" alt="4">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us3.jpg">
+      <div class="advent-text">i love how we make each others innerchild feel safe and loved</div>
     </div>
-    <div class="advent-item" data-text="i love how supportive and positive you are, you make me feel so happy and safe...">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us1.jpg" alt="5">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us1.jpg">
+      <div class="advent-text">i love how supportive and positive you are, you make me feel so happy and safe...</div>
     </div>
-    <div class="advent-item" data-text="i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable;)">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us4.jpg" alt="6">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us4.jpg">
+      <div class="advent-text">i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable ;)</div>
     </div>
-    <div class="advent-item" data-text="i love how observing are you and how you always try to help, not only me but people around you - you truly have pure beautiful heart(youre still bit evil tho)">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us2.JPG" alt="7">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us2.JPG">
+      <div class="advent-text">i love how observing are you and how you always try to help...you truly have pure beautiful heart (you’re still bit evil tho)</div>
     </div>
-    <div class="advent-item" data-text="i adore your facial expressions, youre just AHHHH">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/sunset.jpeg" alt="8">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/sunset.jpeg">
+      <div class="advent-text">i adore your facial expressions, youre just AHHHH</div>
     </div>
-    <div class="advent-item" data-text="because youre my amerigga awww">
-      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/call.jpeg" alt="9">
-      <div class="advent-text"></div>
+    <div class="advent-item">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/call.jpeg">
+      <div class="advent-text">because youre my amerigga awww</div>
     </div>
   </div>
 </div>
 
-<!-- Finale -->
-<div id="finale">
-  I WISH YOU Big Beautiful Birthday!
-</div>
+<!-- Final message -->
+<div id="final-message">I WISH YOU Big Beautiful Birthday! 🎉</div>
 
 <script>
   const roomBtn = document.getElementById('room-btn');
   const roomInput = document.getElementById('room-input');
-  const landingSection = document.getElementById('landing-section');
-  const secretSection = document.getElementById('secret-section');
+  const landing = document.getElementById('landing');
   const snowContainer = document.getElementById('snow-container');
-  const finale = document.getElementById('finale');
+  const reasonsPage = document.getElementById('reasons-page');
+  const finalMessage = document.getElementById('final-message');
 
-  // Dog snow while waiting
-  const dogImage = "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png";
+  // Dog snowflakes
+  const dogImg = "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png";
 
-  function startSnow(image, speed = 20, size = [20, 50]) {
+  function startSnow(image, speed = 20, interval = 300) {
     return setInterval(() => {
       const img = document.createElement('img');
       img.src = image;
       img.style.position = 'absolute';
-      img.style.width = `${Math.random() * (size[1]-size[0]) + size[0]}px`;
+      img.style.width = `${Math.random() * 40 + 30}px`;
       img.style.left = `${Math.random() * window.innerWidth}px`;
-      img.style.top = '-50px';
+      img.style.top = '-60px';
       img.style.zIndex = '1';
       snowContainer.appendChild(img);
 
@@ -223,48 +217,46 @@
           clearInterval(fall);
         }
       }, speed);
-    }, 300);
+    }, interval);
   }
 
-  let snowInterval = startSnow(dogImage);
+  let dogSnow;
 
-  // Unlock code
+  // Start dogs on load
+  window.onload = () => {
+    dogSnow = startSnow(dogImg);
+  };
+
+  // Unlock with code
   roomBtn.addEventListener('click', () => {
     if (roomInput.value === '2741') {
-      clearInterval(snowInterval);
+      clearInterval(dogSnow);
       snowContainer.innerHTML = "";
-      landingSection.style.display = 'none';
-      secretSection.style.display = 'block';
+      landing.style.display = 'none';
+      reasonsPage.style.display = 'block';
     } else {
       alert('Incorrect code 💔');
     }
   });
 
-  // Advent calendar logic
+  // Advent click
   const adventItems = document.querySelectorAll('.advent-item');
   let clickedCount = 0;
 
   adventItems.forEach(item => {
-    const textDiv = item.querySelector('.advent-text');
-    const img = item.querySelector('img');
-    const reason = item.getAttribute('data-text');
-
     item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      const text = item.querySelector('.advent-text');
       if (img.style.display !== 'none') {
         img.style.display = 'none';
-        textDiv.innerText = reason;
-        textDiv.style.display = 'flex';
+        text.style.display = 'flex';
         clickedCount++;
         if (clickedCount === adventItems.length) {
-          // After all 9 reasons
+          // All clicked -> final show
           setTimeout(() => {
-            secretSection.style.display = 'none';
-            finale.style.display = 'flex';
-            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, [30, 60]);
-            setTimeout(() => {
-              finale.style.display = 'none';
-              snowContainer.innerHTML = "";
-            }, 10000);
+            reasonsPage.style.display = 'none';
+            finalMessage.style.display = 'block';
+            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, 100);
           }, 500);
         }
       }
@@ -274,6 +266,7 @@
 
 </body>
 </html>
+
 
 
 
