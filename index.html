@@ -21,8 +21,7 @@
 
   #landing-img {
     width: 300px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #fff;
+    border-radius: 2px;;
   }
 
   #room-container {
@@ -65,6 +64,7 @@
   #reasons-page {
     display: none;
     margin-top: 30px;
+    margin-bottom: 100px;
     z-index: 2;
     position: relative;
   }
@@ -122,6 +122,8 @@
     background: rgba(255, 230, 240, 0.95); /* soft light pink overlay */
     opacity: 0;
     z-index: 2;
+    
+    transform: translateX(-10px); /* shift 10px left */
   }
 
   /* Final message */
@@ -147,7 +149,7 @@
   <div id="room-container">
     <p>Enter 4 number code:</p>
     <input type="text" id="room-input" placeholder="Enter code">
-    <button id="room-btn">Enter</button>
+    <button id="room-btn">Click :0</button>
   </div>
 </div>
 
@@ -156,7 +158,7 @@
 
 <!-- Reasons page -->
 <div id="reasons-page">
-  <div id="reasons-title">Reasons I love you (click on pictures baby) 💕</div>
+  <div id="reasons-title">Reasons I love you (click on pictures) 💕</div>
   <div id="advent-container">
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG">
@@ -198,7 +200,7 @@
 </div>
 
 <!-- Final message -->
-<div id="final-message">I WISH YOU Big Beautiful Birthday! 🎉</div>
+<div id="final-message">I wish you Big Beautiful Birthday my love! I hope you had fun :D 🎉</div>
 
 <script>
   const roomBtn = document.getElementById('room-btn');
@@ -247,7 +249,7 @@
       landing.style.display = 'none';
       reasonsPage.style.display = 'block';
     } else {
-      alert('Incorrect code 💔');
+      alert('Oh OOOUUUU.. incorrect');
     }
   });
 
@@ -272,7 +274,7 @@
               "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png",
               15,
               100,
-              [60, 120]  // bigger snowflakes
+              [80, 200]  // bigger snowflakes
             );
           }, 6000);
         }
@@ -283,6 +285,7 @@
 
 </body>
 </html>
+
 
 
 
