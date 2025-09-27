@@ -91,7 +91,7 @@
     cursor: pointer;
     position: relative;
     box-shadow: 0 0 10px #fff;
-    background-color: white;
+    background-color: #ffe6f0; /* very light pink */
   }
 
   .advent-item img,
@@ -102,6 +102,7 @@
     height: 100%;
     object-fit: cover;
     transition: opacity 0.8s ease; /* fade effect */
+    font-family: 'Times New Roman', serif;
   }
 
   .advent-item img {
@@ -114,12 +115,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
     font-weight: bold;
-    font-family: 'Times New Roman', serif;
-    color: #d883a5; /* muted pink */
-    background: rgba(255,255,255,0.9);
+    color: #d63384; /* muted romantic pink */
+    background: rgba(255, 230, 240, 0.95); /* soft light pink overlay */
     opacity: 0;
     z-index: 2;
   }
@@ -129,7 +129,6 @@
     display: none;
     font-size: 36px;
     font-weight: bold;
-    font-family: 'Times New Roman', serif;
     color: #ff69b4;
     position: fixed;
     top: 40%;
@@ -212,12 +211,12 @@
   // Dog snowflakes
   const dogImg = "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png";
 
-  function startSnow(image, speed = 20, interval = 300, sizeMin = 30, sizeMax = 70) {
+  function startSnow(image, speed = 20, interval = 300, size = [30, 70]) {
     return setInterval(() => {
       const img = document.createElement('img');
       img.src = image;
       img.style.position = 'absolute';
-      img.style.width = `${Math.random() * (sizeMax - sizeMin) + sizeMin}px`;
+      img.style.width = `${Math.random() * (size[1] - size[0]) + size[0]}px`;
       img.style.left = `${Math.random() * window.innerWidth}px`;
       img.style.top = '-60px';
       img.style.zIndex = '1';
@@ -265,12 +264,17 @@
         text.style.opacity = "1";   // fade in
         clickedCount++;
         if (clickedCount === adventItems.length) {
+          // Delay 6 seconds before final
           setTimeout(() => {
             reasonsPage.style.display = 'none';
             finalMessage.style.display = 'block';
-            // bigger snowflakes for couple image
-            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, 100, 80, 150);
-          }, 6000); // wait 6 seconds
+            startSnow(
+              "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png",
+              15,
+              100,
+              [60, 120]  // bigger snowflakes
+            );
+          }, 6000);
         }
       }
     });
@@ -279,6 +283,7 @@
 
 </body>
 </html>
+
 
 
 
