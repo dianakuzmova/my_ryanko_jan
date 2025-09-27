@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bday webpage for Ryanko Jan. <3 </title>
+<title>Birthday Surprise for Ryanko Jan</title>
 <style>
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Times New Roman', serif;
     background-color: #001f3f; /* navy blue */
     overflow-x: hidden;
     text-align: center;
@@ -35,6 +35,7 @@
     border-radius: 10px;
     border: none;
     outline: none;
+    font-family: 'Times New Roman', serif;
   }
 
   #room-btn {
@@ -46,6 +47,7 @@
     color: white;
     cursor: pointer;
     margin-left: 10px;
+    font-family: 'Times New Roman', serif;
   }
 
   /* Falling PNGs */
@@ -115,7 +117,8 @@
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
-    color: #ff1493;
+    font-family: 'Times New Roman', serif;
+    color: #d883a5; /* muted pink */
     background: rgba(255,255,255,0.9);
     opacity: 0;
     z-index: 2;
@@ -126,6 +129,7 @@
     display: none;
     font-size: 36px;
     font-weight: bold;
+    font-family: 'Times New Roman', serif;
     color: #ff69b4;
     position: fixed;
     top: 40%;
@@ -153,49 +157,49 @@
 
 <!-- Reasons page -->
 <div id="reasons-page">
-  <div id="reasons-title">SOME REASONS I LOVE U (click on pictures) </div>
+  <div id="reasons-title">Reasons I love you (click on pictures baby) 💕</div>
   <div id="advent-container">
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG">
-      <div class="advent-text">I love your autism -you're like my little Sheldon if he was autistic :D</div>
+      <div class="advent-text">i LOVE how autistic you are - my little Sheldon :D</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/mirror.jpeg">
-      <div class="advent-text">I love how you handle problems and obstacles and how strong you are in your body and mind.</div>
+      <div class="advent-text">i love how you handle problems and obstacles and how strong you are in your body and mind</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/busy.JPG">
-      <div class="advent-text">I love how you're so ambitious and strategic and GENIUS?? WHAT??</div>
+      <div class="advent-text">i love how you're so ambitious and strategic and GENIUS WHAT??</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us3.jpg">
-      <div class="advent-text">I love how we make each others innerchild feel safe and loved.</div>
+      <div class="advent-text">i love how we make each others innerchild feel safe and loved</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us1.jpg">
-      <div class="advent-text">I love how supportive and positive you are, you make me feel so happy and safe...</div>
+      <div class="advent-text">i love how supportive and positive you are, you make me feel so happy and safe...</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us4.jpg">
-      <div class="advent-text">I love your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable ;)</div>
+      <div class="advent-text">i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable ;)</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us2.JPG">
-      <div class="advent-text">I love how observing and helping you are, and good at giving advices - you truly have pure beautiful heart (you’re still bit evil tho)</div>
+      <div class="advent-text">i love how observing are you and how you always try to help...you truly have pure beautiful heart (you’re still bit evil tho)</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/sunset.jpeg">
-      <div class="advent-text">I adore your facial expressions, youre just AHHHH</div>
+      <div class="advent-text">i adore your facial expressions, youre just AHHHH</div>
     </div>
     <div class="advent-item">
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/call.jpeg">
-      <div class="advent-text">Because youre my amerigga awww, we're gonna win, BIGLY!</div>
+      <div class="advent-text">because youre my amerigga awww</div>
     </div>
   </div>
 </div>
 
 <!-- Final message -->
-<div id="final-message">I wish you Big Beautiful Birthday! JUPIII🎉</div>
+<div id="final-message">I WISH YOU Big Beautiful Birthday! 🎉</div>
 
 <script>
   const roomBtn = document.getElementById('room-btn');
@@ -208,12 +212,12 @@
   // Dog snowflakes
   const dogImg = "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png";
 
-  function startSnow(image, speed = 20, interval = 300) {
+  function startSnow(image, speed = 20, interval = 300, sizeMin = 30, sizeMax = 70) {
     return setInterval(() => {
       const img = document.createElement('img');
       img.src = image;
       img.style.position = 'absolute';
-      img.style.width = `${Math.random() * 40 + 30}px`;
+      img.style.width = `${Math.random() * (sizeMax - sizeMin) + sizeMin}px`;
       img.style.left = `${Math.random() * window.innerWidth}px`;
       img.style.top = '-60px';
       img.style.zIndex = '1';
@@ -244,7 +248,7 @@
       landing.style.display = 'none';
       reasonsPage.style.display = 'block';
     } else {
-      alert('Oh ouuu, bad code, love.. DW, try again!');
+      alert('Incorrect code 💔');
     }
   });
 
@@ -264,8 +268,9 @@
           setTimeout(() => {
             reasonsPage.style.display = 'none';
             finalMessage.style.display = 'block';
-            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, 100);
-          }, 500);
+            // bigger snowflakes for couple image
+            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, 100, 80, 150);
+          }, 6000); // wait 6 seconds
         }
       }
     });
@@ -274,8 +279,6 @@
 
 </body>
 </html>
-
-
 
 
 
