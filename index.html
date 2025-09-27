@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Love Page for Ryan 💖</title>
+<title>Bday minipage for Ryanko jan</title>
 <style>
   body {
     margin: 0;
@@ -14,15 +14,17 @@
     color: white;
   }
 
-  /* Landing picture */
+  /* Landing section */
+  #landing-section {
+    margin-top: 40px;
+  }
+
   #landing-img {
     width: 300px;
     border-radius: 20px;
-    margin-top: 40px;
     box-shadow: 0 0 20px #fff;
   }
 
-  /* Room input */
   #room-container {
     margin-top: 20px;
   }
@@ -46,15 +48,7 @@
     margin-left: 10px;
   }
 
-  /* Secret message */
-  #secret-message {
-    display: none;
-    font-size: 24px;
-    margin-top: 30px;
-    text-shadow: 0 0 10px #fff;
-  }
-
-  /* Falling PNGs container */
+  /* Snowflakes container */
   #snow-container {
     position: fixed;
     top: 0;
@@ -65,16 +59,27 @@
     z-index: 1;
   }
 
-  /* Advent calendar */
-  #advent-container {
+  /* Reasons section */
+  #reasons-section {
     display: none;
-    margin-top: 40px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  #reasons-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #fff;
+  }
+
+  #advent-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     justify-items: center;
-    z-index: 2;
-    position: relative;
+    margin: 0 auto;
+    max-width: 350px;
   }
 
   .advent-item {
@@ -85,6 +90,14 @@
     cursor: pointer;
     position: relative;
     box-shadow: 0 0 10px #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #ff1493;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
   }
 
   .advent-item img {
@@ -93,86 +106,94 @@
     object-fit: cover;
   }
 
-  .advent-text {
-    position: absolute;
-    bottom: 0;
-    background: rgba(255,255,255,0.8);
-    color: #ff1493;
-    font-weight: bold;
-    padding: 5px;
-    font-size: 14px;
+  .hidden-text {
     display: none;
+    padding: 5px;
+  }
+
+  /* Final message */
+  #final-message {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px #ff1493, 0 0 30px #fff;
+    z-index: 10;
   }
 </style>
 </head>
 <body>
 
-<!-- Landing picture -->
-<img id="landing-img" src="https://via.placeholder.com/300x300.png?text=Your+Picture" alt="Our Picture">
-
-<!-- Room input -->
-<div id="room-container">
-  <input type="text" id="room-input" placeholder="ENTER ROOM NUMBER">
-  <button id="room-btn">Enter</button>
+<!-- Landing Section -->
+<div id="landing-section">
+  <img id="landing-img" src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/smile.jpeg" alt="Our Picture">
+  <div id="room-container">
+    <input type="text" id="room-input" placeholder="Enter 4 number code">
+    <button id="room-btn">Enter</button>
+  </div>
 </div>
 
-<!-- Secret message -->
-<div id="secret-message">
-  I love you very much, you're an amazing person! 💕
-</div>
-
-<!-- Falling PNGs -->
+<!-- Snowflakes -->
 <div id="snow-container"></div>
 
-<!-- Advent calendar -->
-<div id="advent-container">
-  <div class="advent-item">
-    <img src="https://via.placeholder.com/100x100.png?text=1" alt="1">
-    <div class="advent-text">Reason 1: You always make me smile 😘</div>
+<!-- Reasons Section -->
+<div id="reasons-section">
+  <div id="reasons-title">Reasons I love you (click on pictures baby)</div>
+  <div id="advent-container">
+    <div class="advent-item" data-reason="i LOVE how autistic you are - my little Sheldon :D">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG" alt="1">
+    </div>
+    <div class="advent-item" data-reason="i love how you handle problems and obsticles and how strong you are in your body and mind">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/mirror.jpeg" alt="2">
+    </div>
+    <div class="advent-item" data-reason="i love how you're so ambitious and strategic and GENIUS WHAT??">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/busy.JPG" alt="3">
+    </div>
+    <div class="advent-item" data-reason="i love how we make each others innerchild feel safe and loved">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us3.jpg" alt="4">
+    </div>
+    <div class="advent-item" data-reason="i love how supportive and positive you are, you make me feel so happy and safe...">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us1.jpg" alt="5">
+    </div>
+    <div class="advent-item" data-reason="i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable;)">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us4.jpg" alt="6">
+    </div>
+    <div class="advent-item" data-reason="i love how observing are you and how you always try to help, not only me but people around you - you truly have pure beautiful heart(youre still bit evil tho)">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us2.JPG" alt="7">
+    </div>
+    <div class="advent-item" data-reason="i adore your facial expressions, youre just AHHHH">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/sunset.jpeg" alt="8">
+    </div>
+    <div class="advent-item" data-reason="because youre my amerigga awww">
+      <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/call.jpeg" alt="9">
+    </div>
   </div>
-  <div class="advent-item">
-    <img src="https://via.placeholder.com/100x100.png?text=2" alt="2">
-    <div class="advent-text">Reason 2: You are so kind 💖</div>
-  </div>
-  <div class="advent-item">
-    <img src="https://via.placeholder.com/100x100.png?text=3" alt="3">
-    <div class="advent-text">Reason 3: You inspire me every day ✨</div>
-  </div>
-  <!-- Add more items as needed -->
 </div>
 
+<!-- Final message -->
+<div id="final-message">I WISH YOU Big Beautiful Birthday!</div>
+
 <script>
-  // Room number check
   const roomBtn = document.getElementById('room-btn');
   const roomInput = document.getElementById('room-input');
-  const secretMessage = document.getElementById('secret-message');
-  const adventContainer = document.getElementById('advent-container');
+  const landingSection = document.getElementById('landing-section');
+  const reasonsSection = document.getElementById('reasons-section');
   const snowContainer = document.getElementById('snow-container');
+  const finalMessage = document.getElementById('final-message');
 
-  roomBtn.addEventListener('click', () => {
-    if(roomInput.value === '2741') {
-      document.getElementById('room-container').style.display = 'none';
-      secretMessage.style.display = 'block';
-      adventContainer.style.display = 'grid';
-      startSnow();
-    } else {
-      alert('Incorrect room number 💔');
-    }
-  });
+  let clickedCount = 0;
 
-  // Falling PNGs
-  const snowImages = [
-    'https://via.placeholder.com/40x40.png?text=❤', // Replace with your PNG URLs
-    'https://via.placeholder.com/40x40.png?text=💕',
-    'https://via.placeholder.com/40x40.png?text=💖'
-  ];
-
-  function startSnow() {
-    setInterval(() => {
+  // Dog snowflakes
+  function startSnow(imageUrl) {
+    return setInterval(() => {
       const img = document.createElement('img');
-      img.src = snowImages[Math.floor(Math.random() * snowImages.length)];
+      img.src = imageUrl;
       img.style.position = 'absolute';
-      img.style.width = `${Math.random() * 30 + 20}px`;
+      img.style.width = `${Math.random() * 40 + 20}px`;
       img.style.left = `${Math.random() * window.innerWidth}px`;
       img.style.top = '-50px';
       img.style.zIndex = '1';
@@ -180,7 +201,7 @@
 
       let fall = setInterval(() => {
         img.style.top = parseFloat(img.style.top) + 2 + 'px';
-        if(parseFloat(img.style.top) > window.innerHeight) {
+        if (parseFloat(img.style.top) > window.innerHeight) {
           snowContainer.removeChild(img);
           clearInterval(fall);
         }
@@ -188,16 +209,44 @@
     }, 300);
   }
 
-  // Advent calendar click
+  let dogSnow = startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png");
+
+  // Unlock logic
+  roomBtn.addEventListener('click', () => {
+    if (roomInput.value === '2741') {
+      clearInterval(dogSnow);
+      snowContainer.innerHTML = "";
+      landingSection.style.display = 'none';
+      reasonsSection.style.display = 'block';
+    } else {
+      alert('Incorrect room number 💔');
+    }
+  });
+
+  // Advent calendar click logic
   const adventItems = document.querySelectorAll('.advent-item');
   adventItems.forEach(item => {
     item.addEventListener('click', () => {
-      const text = item.querySelector('.advent-text');
-      text.style.display = text.style.display === 'block' ? 'none' : 'block';
+      const reason = item.getAttribute('data-reason');
+      item.innerHTML = `<div class="hidden-text">${reason}</div>`;
+      clickedCount++;
+      if (clickedCount === adventItems.length) {
+        showFinal();
+      }
     });
   });
+
+  // Final celebration
+  function showFinal() {
+    finalMessage.style.display = 'block';
+    let coupleSnow = startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png");
+    setTimeout(() => {
+      clearInterval(coupleSnow);
+    }, 10000);
+  }
 </script>
 
 </body>
 </html>
+
 
