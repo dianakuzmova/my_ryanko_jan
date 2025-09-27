@@ -21,7 +21,6 @@
 
   #landing-img {
     width: 300px;
-    border-radius: 20px;
   }
 
   #room-container {
@@ -83,27 +82,25 @@
     height: 100px;
     cursor: pointer;
     position: relative;
-    background: white;
-    color: #003049;
-    font-weight: bold;
-    font-size: 13px;
-    text-align: center;
+    border: 1px solid #003049;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #003049;
+    background: white;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
   }
 
   .advent-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-  }
-
-  .advent-text {
-    display: none;
-    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
   }
 
   /* Final message */
@@ -138,41 +135,32 @@
 <div id="reasons-section">
   <div id="reasons-title">Reasons I love you (click on pictures baby)</div>
   <div id="advent-container">
-    <div class="advent-item" data-reason="i LOVE how autistic you are - my little Sheldon :D">
+    <div class="advent-item">i LOVE how autistic you are - my little Sheldon :D
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/subway.JPG" alt="1">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i love how you handle problems and obsticles and how strong you are in your body and mind">
+    <div class="advent-item">i love how you handle problems and obsticles and how strong you are in your body and mind
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/mirror.jpeg" alt="2">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i love how you're so ambitious and strategic and GENIUS WHAT??">
+    <div class="advent-item">i love how you're so ambitious and strategic and GENIUS WHAT??
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/busy.JPG" alt="3">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i love how we make each others innerchild feel safe and loved">
+    <div class="advent-item">i love how we make each others innerchild feel safe and loved
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us3.jpg" alt="4">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i love how supportive and positive you are, you make me feel so happy and safe...">
+    <div class="advent-item">i love how supportive and positive you are, you make me feel so happy and safe...
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us1.jpg" alt="5">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable;)">
+    <div class="advent-item">i LOVE your body, every inch of it is SO perfect and beautiful and hmm lets just say ...very capable;)
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us4.jpg" alt="6">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i love how observing are you and how you always try to help, not only me but people around you - you truly have pure beautiful heart(youre still bit evil tho)">
+    <div class="advent-item">i love how observing are you and how you always try to help, not only me but people around you - you truly have pure beautiful heart(youre still bit evil tho)
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/us2.JPG" alt="7">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="i adore your facial expressions, youre just AHHHH">
+    <div class="advent-item">i adore your facial expressions, youre just AHHHH
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/sunset.jpeg" alt="8">
-      <div class="advent-text"></div>
     </div>
-    <div class="advent-item" data-reason="because youre my amerigga awww">
+    <div class="advent-item">because youre my amerigga awww
       <img src="https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/call.jpeg" alt="9">
-      <div class="advent-text"></div>
     </div>
   </div>
 </div>
@@ -226,20 +214,13 @@
   });
 
   // Advent calendar click logic
-  const adventItems = document.querySelectorAll('.advent-item');
-  adventItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const reason = item.getAttribute('data-reason');
-      const img = item.querySelector('img');
-      const text = item.querySelector('.advent-text');
-      if (img && text.style.display === 'none') {
-        img.style.display = 'none';        // hide picture
-        text.innerText = reason;           // put reason text
-        text.style.display = 'block';      // show text
-        clickedCount++;
-        if (clickedCount === adventItems.length) {
-          showFinal();
-        }
+  const adventImages = document.querySelectorAll('.advent-item img');
+  adventImages.forEach(img => {
+    img.addEventListener('click', () => {
+      img.style.display = 'none'; // hide the picture
+      clickedCount++;
+      if (clickedCount === adventImages.length) {
+        showFinal();
       }
     });
   });
@@ -259,3 +240,4 @@
 
 </body>
 </html>
+
