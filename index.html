@@ -118,7 +118,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     color: white;
     font-size: 40px;
     font-weight: bold;
@@ -127,6 +127,7 @@
     justify-content: center;
     z-index: 10;
     text-align: center;
+    flex-direction: column;
   }
 </style>
 </head>
@@ -189,7 +190,9 @@
 </div>
 
 <!-- Finale -->
-<div id="finale">i wish you Big Beautiful Birthday!</div>
+<div id="finale">
+  I WISH YOU Big Beautiful Birthday!
+</div>
 
 <script>
   const roomBtn = document.getElementById('room-btn');
@@ -199,17 +202,15 @@
   const snowContainer = document.getElementById('snow-container');
   const finale = document.getElementById('finale');
 
-  // Snow images
-  const snowImages = [
-    "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png"
-  ];
+  // Dog snow while waiting
+  const dogImage = "https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/pibble.png";
 
-  function startSnow(image) {
+  function startSnow(image, speed = 20, size = [20, 50]) {
     return setInterval(() => {
       const img = document.createElement('img');
       img.src = image;
       img.style.position = 'absolute';
-      img.style.width = `${Math.random() * 30 + 20}px`;
+      img.style.width = `${Math.random() * (size[1]-size[0]) + size[0]}px`;
       img.style.left = `${Math.random() * window.innerWidth}px`;
       img.style.top = '-50px';
       img.style.zIndex = '1';
@@ -221,11 +222,11 @@
           snowContainer.removeChild(img);
           clearInterval(fall);
         }
-      }, 20);
+      }, speed);
     }, 300);
   }
 
-  let snowInterval = startSnow(snowImages[0]);
+  let snowInterval = startSnow(dogImage);
 
   // Unlock code
   roomBtn.addEventListener('click', () => {
@@ -235,11 +236,11 @@
       landingSection.style.display = 'none';
       secretSection.style.display = 'block';
     } else {
-      alert('Oh OUUUUUUU, Incorrect!');
+      alert('Incorrect code 💔');
     }
   });
 
-  // Advent calendar
+  // Advent calendar logic
   const adventItems = document.querySelectorAll('.advent-item');
   let clickedCount = 0;
 
@@ -255,13 +256,14 @@
         textDiv.style.display = 'flex';
         clickedCount++;
         if (clickedCount === adventItems.length) {
+          // After all 9 reasons
           setTimeout(() => {
             secretSection.style.display = 'none';
             finale.style.display = 'flex';
-            // Start finale snow
-            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png");
+            startSnow("https://raw.githubusercontent.com/dianakuzmova/my_ryanko_jan/main/images/couple%20snowflakes.png", 15, [30, 60]);
             setTimeout(() => {
               finale.style.display = 'none';
+              snowContainer.innerHTML = "";
             }, 10000);
           }, 500);
         }
@@ -272,5 +274,6 @@
 
 </body>
 </html>
+
 
 
